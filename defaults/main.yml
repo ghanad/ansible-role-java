@@ -1,0 +1,6 @@
+---
+# copy java from this directory in local machine
+JAVA_SRC_DIR: /opt/
+
+# copy java files to this directory in remote machine
+JAVA_DIR_HOME: /opt/

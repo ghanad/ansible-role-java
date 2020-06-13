@@ -1,0 +1,32 @@
+---
+# find java file name in local machine
+- name: find java file on /opt/ local machine
+  find:
+    paths: "{{ JAVA_SRC_DIR }}"
+    patterns: 'jdk-*.tar.gz'
+  register: JAVA_FILE_PATH
+  run_once: true
+  delegate_to: localhost
+
+- name: file not found in dir
+  fail:
+    msg: "java file not found in {{ JAVA_SRC_DIR }}"
+  when: JAVA_FILE_PATH.matched == 0
+
+- name: set fact java source file
+  set_fact:
+    JAVA_FILE_PATH: "{{ JAVA_FILE_PATH.files.0.path }}"
+
+
+# unarchive java file
+- name:  unarchive java in host
+  unarchive:
+    src: "{{ JAVA_FILE_PATH }}"
+    dest: "{{ JAVA_DIR_HOME }}"
+    list_files: yes
+  register: JAVA_DIR_NAME_TMP
+
+
+- name: set fact for java home
+  set_fact:
+    JAVA_HOME: "{{ (JAVA_DIR_HOME + '/' + JAVA_DIR_NAME_TMP.files.0) | replace('//','/') }}"

@@ -1,0 +1,5 @@
+---
+# tasks file for java
+- include: copy_unarchive.yml
+- include: update_alternative.yml
+- include: edit_env.yml

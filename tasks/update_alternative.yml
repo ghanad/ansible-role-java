@@ -1,0 +1,8 @@
+---
+# update allternative
+- name: update-alternative for java
+  alternatives:
+    name: java
+    path: '{{ (JAVA_HOME + "/bin/java") | replace("//","/") }}'
+    link: /usr/bin/java
+    priority: 1
