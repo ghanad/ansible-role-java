@@ -1,3 +1,5 @@
+![](https://github.com/ghand/ansible-role-java/workflows/ci/badge.svg)
+
 Ansible Role: Java
 =========
 
