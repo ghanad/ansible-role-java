@@ -2,11 +2,7 @@
 - name: Converge
   hosts: all
   tasks:
-    # - name: update apt cache
-    #   apt:
-    #     update_cache: true
-    #     cache_valid_time: 3600
     
-   - name: "Include ali"
+   - name: "Install Java"
      include_role:
        name: "java"

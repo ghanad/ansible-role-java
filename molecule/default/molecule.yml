@@ -4,7 +4,7 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: molecle_test
+  - name: molecle_java_test
     image: pycontribs/ubuntu
     privileged: true
     pre_build_image: true

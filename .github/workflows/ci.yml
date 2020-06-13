@@ -5,7 +5,6 @@ name: CI
   push:
     branches:
       - master
-      - java/*.yml
 
 jobs:
   test:
@@ -14,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04]
-        python-version: [3.6]
+        # python-version: [3.6]
 
     steps:
       - name: check out
@@ -23,8 +22,8 @@ jobs:
 
       - name: set up python3
         uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
+        # with:
+          # python-version: ${{ matrix.python-version }}
 
       - name: install test depend
         run: pip3 install molecule docker
@@ -34,7 +33,7 @@ jobs:
         # run: echo "balabala" > /opt/sample.txt ; tar czf jdk-8u241-linux-x64.tar.gz -C /opt/ sample.txt; mv jdk-8u241-linux-x64.tar.gz /opt
 
       - name: Run Molecule test
-        run: cd java; molecule test
+        run: molecule test
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLORE: '1'
