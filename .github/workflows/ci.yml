@@ -32,6 +32,9 @@ jobs:
         run: wget https://iweb.dl.sourceforge.net/project/javajdk-8/JDK8/jdk-8u241-linux-x64.tar.gz -P /opt/
         # run: echo "balabala" > /opt/sample.txt ; tar czf jdk-8u241-linux-x64.tar.gz -C /opt/ sample.txt; mv jdk-8u241-linux-x64.tar.gz /opt
 
+      - name: ls command
+        run: ls ; echo -e '\n\n\n' ; pwd
+
       - name: Run Molecule test
         run: molecule test
         env:
