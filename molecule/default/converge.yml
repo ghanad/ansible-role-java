@@ -5,4 +5,4 @@
     
    - name: "Install Java"
      include_role:
-       name: "java"
+       name: "anisble-role-java"
