@@ -1,5 +1,4 @@
-![](https://github.com/ghand/ansible-role-java/workflows/ci/badge.svg)
-[![Actions Status](https://github.com/ghand/ansible-role-java/workflows/ci/badge.svg)](https://github.com/ghanad/ansible-role-java/actions)
+[![Actions Status](https://github.com/ghand/ansible-role-java/workflows/CI/badge.svg)](https://github.com/ghanad/ansible-role-java/actions)
 
 
 Ansible Role: Java
